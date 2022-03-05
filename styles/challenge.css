@@ -1,41 +1,150 @@
+:root {
+    --shadow-color: #f1bc2a;
+}
+
 .challenge {
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: 2;
     height: 100%;
     width: 100%;
-    background-color: transparent;
-    padding-top: 15px;
+    background-color: "#424242";
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 1s ease-in;
 }
 
-.challenge .bob {
-    position: absolute;
-    left: -150px;
-    top: 100px;
-    font-size: 56px;
-
-    transition: all 1s ease-in-out;
-}
-
-.challenge .bob.show {
-    left: calc(50% - 150px);
-    /* transition: left 1s ease-in-out; */
+.challenge.remove {
+    top: 100vh;
 }
 
 .dialog {
-    min-height: 75px;
+    min-height: 105px;
     width: 550px;
     padding-inline: 10px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.158) 0 1px 15px 2px;
     margin-inline: auto;
-    /* margin-right: 10vw; */
     display: flex;
     align-items: center;
     border-radius: 10px;
+    position: relative;
+}
+
+.dialog span {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-weight: 900;
+    font-size: 14px;
+    animation: fade-pulse 1s infinite;
+    display: flex;
+    justify-content: center;
 }
 
 .dialog p {
     text-align: center;
     font-size: 19px;
     font-weight: bold;
+    display: none;
+    margin-inline: 15px;
+}
+
+.dialog p.show {
+    display: inline;
+    animation: fade-in 1s ease-in;
+}
+
+.button-field {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .button-field button {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 20px 20px 0 0 var(--shadow-color);
+    transition: all 0.5s ease-in-out;
+    animation: floating 1s infinite;
+    border: 2px black dashed;
+    cursor: pointer;
+    opacity: 1;
+} */
+
+.button-field button {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px 2px var(--shadow-color);
+    /* box-shadow: rgba(0, 0, 0, 0.158) 0 1px 15px 4px; */
+    transition: all 0.5s ease-in-out;
+    animation: floating 1s infinite;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.button-field button.hidden {
+    opacity: 0;
+}
+
+.button-field button:hover {
+    box-shadow: 0 0 5px 1px var(--shadow-color);
+}
+
+.challenge .bob {
+    font-size: 68px;
+    transform: translateX(-100px) translateY(25px);
+
+    transition: all 1s ease-in-out;
+}
+
+.challenge .bob.show {
+    /* transition: left 1s ease-in-out; */
+    transform: translateX(calc(50% - 150px)) translateY(25px);
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }

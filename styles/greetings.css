@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Roboto, sans-serif;
+    font-family: Poppins, sans-serif;
     background-color: rgb(245, 245, 245);
     min-height: 100vh;
     overflow-y: hidden;
@@ -12,6 +12,7 @@ body {
 
 .greeting {
     position: absolute;
+    background-color: #424242;
     top: 0;
     width: 100vw;
     height: 100%;

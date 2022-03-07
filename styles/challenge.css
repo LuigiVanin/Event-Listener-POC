@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: all 1s ease-in;
+    transition: all 1s linear;
 }
 
 .challenge.remove {
@@ -43,6 +43,7 @@
     animation: fade-pulse 1s infinite;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .dialog p {
@@ -98,7 +99,7 @@
 }
 
 .button-field button:hover {
-    box-shadow: 0 0 5px 1px var(--shadow-color);
+    box-shadow: 0 0 3px 1px var(--shadow-color);
 }
 
 .challenge .bob {

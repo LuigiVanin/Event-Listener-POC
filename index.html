@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/greetings.css">
     <link rel="stylesheet" href="./styles/challenge.css">
+    <link rel="stylesheet" href="./styles/game.css">
+    <link rel="stylesheet" href="./styles/end_screen.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,12 +20,10 @@
 
 <body>
     <section class="greeting">
-
         <span class="bob">
             🤖
         </span>
         <p> Olá, eu sou Bob e eu serei seu instrutor durante esta POC!</p>
-
         <div class="skip hidden">
             <h1>Clique para passar</h1>
             <ion-icon name="caret-up-outline"></ion-icon>
@@ -37,16 +37,139 @@
                 olhar para os eventos</p>
             <p>O jogo acaba quando todas as cores estiverem no lugar correto!</p>
             <p>Eae, vamos jogar?</p>
-            <span>Enter<ion-icon name="arrow-forward-outline"></ion-icon></span>
+            <span onclick="skipDialog()">Enter<ion-icon name="arrow-forward-outline"></ion-icon></span>
+        </div>
+        <span class="bob">
+            🤖
+        </span>
+        <div class="button-field">
+            <button class="hidden" onclick="startGame()">Começar Jogo</button>
+        </div>
+    </section>
+
+    <section class="game">
+        <div class="current-color">
+            <p> Cor Selecionada: </p>
+            <div class="color-box">
+            </div>
+
+        </div>
+        <div class="game-box">
+            <div class="game-event">
+                <div class="box event" ondblclick="selectColor('#ff8a47')">
+                    <p>Double Click</p>
+                    <div class="color-box">
+                    </div>
+                </div>
+
+                <div class="box event">
+                    <p>Press "K"</p>
+                    <div class="color-box">
+                    </div>
+                </div>
+
+                <div class="box event" onclick="selectColor('#516dec')">
+                    <p>Click</p>
+                    <div class="color-box">
+                    </div>
+                </div>
+
+                <div class="box event" onmouseover="selectColor('#99d43a')">
+                    <p>Mouse Over</p>
+                    <div class="color-box">
+                    </div>
+                </div>
+            </div>
+            <div class="arrow">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="game-target">
+                <div class="box target" onclick="checkColor('#516dec', this)">
+                    <p>
+                        Azul
+                    </p>
+                    <div class="after"></div>
+                </div>
+                <div class="box target" onclick="checkColor('#f1bc2a', this)">
+                    <p>
+                        Amarelo
+                    </p>
+                    <div class="after"></div>
+                </div>
+                <div class="box target" onclick="checkColor('#99d43a', this)">
+                    <p>
+                        Verde
+                    </p>
+                    <div class="after"></div>
+                </div>
+                <div class="box target" onclick="checkColor('#ff8a47', this)">
+                    <p>Vermelho</p>
+                    <div class="after"></div>
+                </div>
+            </div>
         </div>
 
+        <div class="help" onclick="toggleInfoBox()">
+            <ion-icon name="help-outline"></ion-icon>
+        </div>
+
+        <div class="game-info hidden">
+            <h1>
+                <ion-icon name="close-sharp" onclick="toggleInfoBox()"></ion-icon>
+            </h1>
+            <h1>
+                <span class="bob">
+                    🤖
+                </span>
+            </h1>
+            <h1 class="title">
+                Não entendeu como se joga?
+            </h1>
+
+            <p>
+                Bom o jogo é bem simples, tão simples que não sei nem se devemos chamar de jogo hahaha.</p>
+            <p>
+
+                <strong>Na coluna da esquerda</strong> temos caixas com eventos do browser escrito e uma cor, quando
+                realizamos o evento
+                descrito
+                na caixa
+                selecionamos a cor dessa caixa, isso é representado pela caixa superior que possui a cor selecionada.
+            </p>
+            <p>
+                <strong>A coluna da direita </strong> possui caixas com nome de cores, elas representam o destino da sua
+                cor selecionada!
+                Após selecionar uma cor na coluna da esquerda você deve escolher uma caixa da direita para ser o
+                destino.
+            </p>
+            <p>
+                <strong>Como sabe se é o destino certo?</strong> Basta ver se sua cor selecionada(topo) é igual ao nome
+                da cor que está caixa que quer selecionar. Caso as cores corem diferentes uma luz vermelha irá aparecer
+                na caixa superior.
+            </p>
+            <h1>
+                <button onclick="toggleInfoBox()">Entendi 👍</button>
+            </h1>
+        </div>
+    </section>
+
+    <section class="end-screen">
         <span class="bob">
             🤖
         </span>
 
-        <div class="button-field">
-            <button class="hidden" onclick="startGame()">Começar Jogo</button>
-        </div>
+        <p>
+            Obrigado por Testar Essa POC!!
+        </p>
+
+        <button onclick="window.location.reload()">
+            Testar Novamente
+            <ion-icon name="reload-sharp"></ion-icon>
+        </button>
+
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/Events">
+            Mais sobre eventos
+        </a>
 
     </section>
 

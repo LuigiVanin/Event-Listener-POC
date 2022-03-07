@@ -1,0 +1,72 @@
+.end-screen {
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #414141;
+    z-index: 100;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.end-screen.show {
+    left: 0;
+}
+
+.end-screen .bob {
+    font-size: 102px;
+    animation: bob-move2 4s ease-in-out infinite;
+    cursor: crosshair;
+}
+
+.end-screen p {
+    margin-top: 20px;
+    line-height: 45px;
+    color: white;
+    width: 400px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.end-screen button {
+    box-shadow: rgba(0, 0, 0, 0.247) 0 1px 15px 4px;
+    height: 65px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: rgba(255, 255, 255, 0.219);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.end-screen button:hover {
+    color: black;
+    background-color: white;
+    box-shadow: rgba(255, 255, 255, 0.521) 0 1px 15px 8px;
+}
+
+.end-screen ion-icon {
+    font-size: 30px;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    border: white 2px dashed;
+}

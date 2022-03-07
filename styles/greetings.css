@@ -37,14 +37,14 @@ body {
 }
 
 .greeting p {
-    transform: translateY(-70px) translateX(20px);
-    width: 300px;
+    transform: translateY(-80px) translateX(20px);
+    width: 350px;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     background-color: white;
     /* border: 3px rgb(185, 185, 185) solid; */
-    padding: 15px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: rgba(255, 255, 255, 0.466) 0 1px 10px 4px;
 }
